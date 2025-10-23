@@ -50,8 +50,7 @@ int main(void) {
         return 1;
     }
 
-    if ((original != 'C' && original != 'F' && original != 'K') ||
-        (score != 'C' && score != 'F' && score != 'K')) {
+    if ((original != 'C' && original != 'F' && original != 'K') || (score != 'C' && score != 'F' && score != 'K')) {
         printf("Scales must be C, F, or K.\n");
         return 1;
     }
