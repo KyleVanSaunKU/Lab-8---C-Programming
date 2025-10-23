@@ -1,28 +1,15 @@
-# Makefile for EECS 348 Lab 8 - C Programming
+temperature_convert = temperature_convert
+score_combinations = score_combinations
 
-# Compiler and flags
-CC = gcc
-CFLAGS = -Wall -Wextra -std=c11
+temperature_convert_file = temperature_convert.c
+score_combinations_file = score_combinations.c
+all: $(temperature_convert) $(score_combinations)
 
-# Executable names
-EXE1 = temperature_convert
-EXE2 = score_combinations
+$(temperature_convert): $(temperature_convert_file)
+	-o $(temperature_convert) $(temperature_convert_file)
 
-# Source files
-SRC1 = temperature_convert.c
-SRC2 = score_combinations.c
+$(score_combinations): $(score_combinations_file)
+	-o $(score_combinations) $(score_combinations_file)
 
-# Default target (build both programs)
-all: $(EXE1) $(EXE2)
-
-# Build temperature converter
-$(EXE1): $(SRC1)
-	$(CC) $(CFLAGS) -o $(EXE1) $(SRC1)
-
-# Build NFL score combinations
-$(EXE2): $(SRC2)
-	$(CC) $(CFLAGS) -o $(EXE2) $(SRC2)
-
-# Clean up compiled files
 clean:
-	rm -f $(EXE1) $(EXE2)
+	rm -f $(temperature_convert) $(score_combinations)
